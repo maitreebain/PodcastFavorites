@@ -11,6 +11,7 @@ import UIKit
 class FavoritesViewController: UIViewController {
 
     @IBOutlet weak var favoritesTableView: UITableView!
+    private var refreshControl: UIRefreshControl!
     
     var favorite = [Podcasts]() {
         didSet {
@@ -46,9 +47,20 @@ class FavoritesViewController: UIViewController {
             case .failure(let appError):
                 print("appError: \(appError)")
             case .success(let favorite):
-                self.favorite = favorite
+                self.favorite = favorite.filter { $0.favoritedBy!.contains("Mai")}
             }
         }
+    }
+    
+    func configureRefreshControl() {
+        refreshControl = UIRefreshControl()
+        favoritesTableView.refreshControl = refreshControl
+        
+        refreshControl.addTarget(self, action: #selector(), for: .valueChanged)
+        }
+    
+    @objc private func loadFavorites() {
+        
     }
 }
 

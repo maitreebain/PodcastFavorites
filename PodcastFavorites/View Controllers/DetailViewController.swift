@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
         
         
         loadData(for: podcast!)
+        favoritesLoadData(for: podcast!)
     }
     
     func loadData(for podcast: Podcasts) {

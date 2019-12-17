@@ -26,7 +26,7 @@ class FavoritesCell: UITableViewCell {
             
             switch result {
             case .failure(let appError):
-                print("appError: \(appError)")
+                print("appError:  \(appError)")
                 DispatchQueue.main.async {
                     self?.favoritesImage.image = UIImage(systemName: "star.fill")
                 }
