@@ -38,6 +38,17 @@ class PodcastsViewController: UIViewController {
         searchBarQuery()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let podcastsDetailController = segue.destination as? PodcastsDetailController,
+            let indexPath = podcastTableView.indexPathForSelectedRow else {
+                fatalError("no segue found")
+        }
+        let podcastSelected = podcasts[indexPath.row]
+        
+        podcastsDetailController.podcasts = podcastSelected
+        
+    }
+    
     func loadData() {
         
         PodcastsAPIClient.getPodcast(for: searchQuery) { (result) in
@@ -55,6 +66,7 @@ class PodcastsViewController: UIViewController {
         podcasts = podcasts.filter{ $0.collectionName.lowercased().contains(searchQuery.lowercased())}
     }
 
+    
 }
 
 extension PodcastsViewController: UITableViewDataSource, UITableViewDelegate {
