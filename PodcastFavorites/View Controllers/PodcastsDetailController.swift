@@ -16,14 +16,12 @@ class PodcastsDetailController: UIViewController {
     
     @IBOutlet weak var podcastArtistName: UILabel!
     
-    var podcasts: Podcasts?
-    
-    var favorite: FavoritesDataLoad?
+    var podcast: Podcasts?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadData(for: podcasts!)
+        loadData(for: podcast!)
     }
     
     func loadData(for podcast: Podcasts) {
@@ -51,7 +49,27 @@ class PodcastsDetailController: UIViewController {
         
         sender.isEnabled = false
         
-        let addedFavorite = FavoritesDataLoad(trackId: favorite!.trackId, favoritedBy: favorite!.favoritedBy, collectionName: favorite!.collectionName, artworkUrl600: favorite!.artworkUrl600)
+        guard let podcast = podcast else {
+            print("favorite could not be unwrapped")
+            return
+        }
+        
+        let addedFavorite = FavoritesDataLoad(trackId: podcast.trackId, favoritedBy: "Mai", collectionName: podcast.collectionName, artworkUrl600: podcast.artworkUrl600)
+        
+        FavoritesAPIClient.postFavorites(favorite: addedFavorite) { [weak self] (result) in
+            
+            switch result {
+            case .failure(let appError):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Failed to Post", message: "\(appError)")
+                    sender.isEnabled = true
+                }
+            case .success:
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Favorite added!", message: "\(addedFavorite.collectionName) added to your favorites")
+            }
+        }
     }
     
+}
 }

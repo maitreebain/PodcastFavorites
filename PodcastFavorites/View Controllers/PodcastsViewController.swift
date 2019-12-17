@@ -45,7 +45,7 @@ class PodcastsViewController: UIViewController {
         }
         let podcastSelected = podcasts[indexPath.row]
         
-        podcastsDetailController.podcasts = podcastSelected
+        podcastsDetailController.podcast = podcastSelected
         
     }
     
