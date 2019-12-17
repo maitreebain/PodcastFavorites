@@ -18,6 +18,8 @@ class PodcastsDetailController: UIViewController {
     
     var podcasts: Podcasts?
     
+    var favorite: FavoritesDataLoad?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,4 +46,12 @@ class PodcastsDetailController: UIViewController {
 
 }
 }
+    
+    @IBAction func favorited(_ sender: UIBarButtonItem) {
+        
+        sender.isEnabled = false
+        
+        let addedFavorite = FavoritesDataLoad(trackId: favorite!.trackId, favoritedBy: favorite!.favoritedBy, collectionName: favorite!.collectionName, artworkUrl600: favorite!.artworkUrl600)
+    }
+    
 }

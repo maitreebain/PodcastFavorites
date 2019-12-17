@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FavoritesDataLoad {
+struct FavoritesDataLoad: Codable {
     let trackId: Int
     let favoritedBy: String
     let collectionName: String

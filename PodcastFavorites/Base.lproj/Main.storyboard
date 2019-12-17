@@ -134,7 +134,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GX5-SB-3rn"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7Wt-EL-8fX"/>
+                    <navigationItem key="navigationItem" id="7Wt-EL-8fX">
+                        <barButtonItem key="rightBarButtonItem" title="Add favorites" id="ue1-I3-tSo">
+                            <connections>
+                                <action selector="favorited:" destination="fzn-v7-cNK" id="z1Z-Mh-rPA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="podcastArtistName" destination="3c1-lM-IYu" id="YA2-Bv-SeJ"/>
                         <outlet property="podcastCollectionName" destination="lWw-5N-wYL" id="TNq-iI-H7m"/>
@@ -143,12 +149,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ys7-Pp-kav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2873.913043478261" y="116.51785714285714"/>
+            <point key="canvasLocation" x="2923" y="501"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorites View Controller-->
         <scene sceneID="lai-pY-KAy">
             <objects>
-                <viewController id="C7U-9M-JQk" sceneMemberID="viewController">
+                <viewController id="C7U-9M-JQk" customClass="FavoritesViewController" customModule="PodcastFavorites" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bXH-bl-Ea0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,13 +163,65 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favortiesCell" rowHeight="140" id="VAb-Vg-zXm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoritesCell" rowHeight="140" id="VAb-Vg-zXm" customClass="FavoritesCell" customModule="PodcastFavorites" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VAb-Vg-zXm" id="gFu-Ur-fXW">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pcb-4W-bhN">
+                                                    <rect key="frame" x="8" y="8" width="160" height="124"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="160" id="XTb-Ua-zhC"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQs-ka-VLg">
+                                                    <rect key="frame" x="176" y="19" width="198" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wa-ow-xA5">
+                                                    <rect key="frame" x="176" y="59.5" width="170" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="suit.heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nyv-yU-NLY">
+                                                    <rect key="frame" x="354" y="54" width="40" height="32.5"/>
+                                                    <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="sPj-yz-LUa"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MQs-ka-VLg" firstAttribute="top" secondItem="gFu-Ur-fXW" secondAttribute="topMargin" constant="8" id="6E7-Qu-EpT"/>
+                                                <constraint firstItem="pcb-4W-bhN" firstAttribute="top" secondItem="gFu-Ur-fXW" secondAttribute="top" constant="8" id="8om-x1-MlM"/>
+                                                <constraint firstItem="4wa-ow-xA5" firstAttribute="leading" secondItem="pcb-4W-bhN" secondAttribute="trailing" constant="8" id="9jM-Kf-aeS"/>
+                                                <constraint firstAttribute="bottom" secondItem="pcb-4W-bhN" secondAttribute="bottom" constant="8" id="AhU-xA-sDx"/>
+                                                <constraint firstItem="4wa-ow-xA5" firstAttribute="centerY" secondItem="gFu-Ur-fXW" secondAttribute="centerY" id="Cgv-cu-Fko"/>
+                                                <constraint firstItem="Nyv-yU-NLY" firstAttribute="centerY" secondItem="gFu-Ur-fXW" secondAttribute="centerY" id="DTI-Vh-8gg"/>
+                                                <constraint firstItem="Nyv-yU-NLY" firstAttribute="trailing" secondItem="gFu-Ur-fXW" secondAttribute="trailingMargin" id="FYU-Wv-nfr"/>
+                                                <constraint firstItem="4wa-ow-xA5" firstAttribute="leading" secondItem="pcb-4W-bhN" secondAttribute="trailing" constant="8" id="Tzn-yn-RRC"/>
+                                                <constraint firstItem="pcb-4W-bhN" firstAttribute="leading" secondItem="gFu-Ur-fXW" secondAttribute="leading" constant="8" id="Wjl-Bh-H7z"/>
+                                                <constraint firstItem="4wa-ow-xA5" firstAttribute="top" secondItem="MQs-ka-VLg" secondAttribute="bottom" constant="20" id="cK4-z8-Doz"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MQs-ka-VLg" secondAttribute="trailing" constant="20" id="ctO-r2-djp"/>
+                                                <constraint firstItem="MQs-ka-VLg" firstAttribute="leading" secondItem="pcb-4W-bhN" secondAttribute="trailing" constant="8" id="ehK-xY-RhR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MQs-ka-VLg" secondAttribute="trailing" constant="20" id="lWT-lq-5nS"/>
+                                                <constraint firstItem="Nyv-yU-NLY" firstAttribute="leading" secondItem="4wa-ow-xA5" secondAttribute="trailing" constant="8" symbolic="YES" id="nhC-kh-LSp"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="Nyv-yU-NLY" firstAttribute="height" secondItem="VAb-Vg-zXm" secondAttribute="height" multiplier="0.25" id="1xw-a7-dLY"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="favoritedBy" destination="4wa-ow-xA5" id="e5e-RT-Jgp"/>
+                                            <outlet property="favoritesImage" destination="pcb-4W-bhN" id="Un9-W3-W8f"/>
+                                            <outlet property="favoritesTitle" destination="MQs-ka-VLg" id="qgX-iq-CFG"/>
+                                            <segue destination="fzn-v7-cNK" kind="show" id="Yp7-8e-f2q"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -178,6 +236,9 @@
                         <viewLayoutGuide key="safeArea" id="0tk-ee-5gD"/>
                     </view>
                     <navigationItem key="navigationItem" id="L5F-PU-0ok"/>
+                    <connections>
+                        <outlet property="favoritesTableView" destination="Y7z-PY-C1c" id="GBZ-BN-kET"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWt-Uk-gz5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,6 +305,10 @@
     <resources>
         <image name="play.circle" catalog="system" width="64" height="60"/>
         <image name="star.circle" catalog="system" width="64" height="60"/>
+        <image name="suit.heart.fill" catalog="system" width="64" height="54"/>
         <image name="xmark.rectangle" catalog="system" width="64" height="46"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Yp7-8e-f2q"/>
+    </inferredMetricsTieBreakers>
 </document>
