@@ -9,10 +9,10 @@
 import Foundation
 
 struct PodcastsDataLoad: Decodable {
-    let results: [Result]
+    let results: [Podcasts]
 }
 
-struct Result: Decodable {
+struct Podcasts: Decodable {
     let collectionId: Int
     let trackId: Int
     let artistName: String

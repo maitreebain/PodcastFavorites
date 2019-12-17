@@ -23,6 +23,8 @@
 		8021BAE723A93153003DCA31 /* FavoritesDataLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAE623A93153003DCA31 /* FavoritesDataLoad.swift */; };
 		8021BAE923A9337A003DCA31 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAE823A9337A003DCA31 /* NetworkHelper.swift */; };
 		8021BAEC23A933E9003DCA31 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAEB23A933E9003DCA31 /* AppError.swift */; };
+		8021BAEE23A93AEE003DCA31 /* PodcastsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAED23A93AEE003DCA31 /* PodcastsAPIClient.swift */; };
+		8021BAF023A940D4003DCA31 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAEF23A940D4003DCA31 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		8021BAE623A93153003DCA31 /* FavoritesDataLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDataLoad.swift; sourceTree = "<group>"; };
 		8021BAE823A9337A003DCA31 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		8021BAEB23A933E9003DCA31 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		8021BAED23A93AEE003DCA31 /* PodcastsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsAPIClient.swift; sourceTree = "<group>"; };
+		8021BAEF23A940D4003DCA31 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +103,12 @@
 			children = (
 				8002681923A8649D00B06E9D /* AppDelegate.swift */,
 				8002681B23A8649D00B06E9D /* SceneDelegate.swift */,
+				8002681F23A8649D00B06E9D /* Main.storyboard */,
 				8021BAD523A92E12003DCA31 /* View Controllers */,
 				8021BAE323A93128003DCA31 /* API Clients */,
 				8021BAE223A93116003DCA31 /* Models */,
 				8021BADF23A92F98003DCA31 /* Extenstions */,
 				8021BADA23A92F3F003DCA31 /* Custom Cells */,
-				8002681F23A8649D00B06E9D /* Main.storyboard */,
 				8021BAEA23A933A2003DCA31 /* Network Services */,
 				8002682223A864A100B06E9D /* Assets.xcassets */,
 				8002682423A864A100B06E9D /* LaunchScreen.storyboard */,
@@ -145,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				8021BAE023A92FD3003DCA31 /* UIViewControllers+Alerts.swift */,
+				8021BAEF23A940D4003DCA31 /* UIImageView+Extension.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 		8021BAE323A93128003DCA31 /* API Clients */ = {
 			isa = PBXGroup;
 			children = (
+				8021BAED23A93AEE003DCA31 /* PodcastsAPIClient.swift */,
 			);
 			path = "API Clients";
 			sourceTree = "<group>";
@@ -277,9 +283,11 @@
 			files = (
 				8002681E23A8649D00B06E9D /* PodcastsViewController.swift in Sources */,
 				8021BADE23A92F7C003DCA31 /* FavoritesCell.swift in Sources */,
+				8021BAF023A940D4003DCA31 /* UIImageView+Extension.swift in Sources */,
 				8021BAD723A92F28003DCA31 /* PodcastsDetailController.swift in Sources */,
 				8002681A23A8649D00B06E9D /* AppDelegate.swift in Sources */,
 				8021BAE923A9337A003DCA31 /* NetworkHelper.swift in Sources */,
+				8021BAEE23A93AEE003DCA31 /* PodcastsAPIClient.swift in Sources */,
 				8021BAE523A93147003DCA31 /* PodcastsDataLoad.swift in Sources */,
 				8021BAD923A92F32003DCA31 /* FavoritesViewController.swift in Sources */,
 				8021BADC23A92F64003DCA31 /* PodcastCell.swift in Sources */,
