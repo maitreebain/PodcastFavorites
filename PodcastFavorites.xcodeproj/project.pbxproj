@@ -19,6 +19,10 @@
 		8021BADC23A92F64003DCA31 /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BADB23A92F64003DCA31 /* PodcastCell.swift */; };
 		8021BADE23A92F7C003DCA31 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BADD23A92F7C003DCA31 /* FavoritesCell.swift */; };
 		8021BAE123A92FD3003DCA31 /* UIViewControllers+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAE023A92FD3003DCA31 /* UIViewControllers+Alerts.swift */; };
+		8021BAE523A93147003DCA31 /* PodcastsDataLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAE423A93146003DCA31 /* PodcastsDataLoad.swift */; };
+		8021BAE723A93153003DCA31 /* FavoritesDataLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAE623A93153003DCA31 /* FavoritesDataLoad.swift */; };
+		8021BAE923A9337A003DCA31 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAE823A9337A003DCA31 /* NetworkHelper.swift */; };
+		8021BAEC23A933E9003DCA31 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAEB23A933E9003DCA31 /* AppError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		8021BADB23A92F64003DCA31 /* PodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
 		8021BADD23A92F7C003DCA31 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		8021BAE023A92FD3003DCA31 /* UIViewControllers+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllers+Alerts.swift"; sourceTree = "<group>"; };
+		8021BAE423A93146003DCA31 /* PodcastsDataLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsDataLoad.swift; sourceTree = "<group>"; };
+		8021BAE623A93153003DCA31 /* FavoritesDataLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDataLoad.swift; sourceTree = "<group>"; };
+		8021BAE823A9337A003DCA31 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		8021BAEB23A933E9003DCA31 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +99,13 @@
 			children = (
 				8002681923A8649D00B06E9D /* AppDelegate.swift */,
 				8002681B23A8649D00B06E9D /* SceneDelegate.swift */,
+				8021BAD523A92E12003DCA31 /* View Controllers */,
+				8021BAE323A93128003DCA31 /* API Clients */,
+				8021BAE223A93116003DCA31 /* Models */,
 				8021BADF23A92F98003DCA31 /* Extenstions */,
 				8021BADA23A92F3F003DCA31 /* Custom Cells */,
-				8021BAD523A92E12003DCA31 /* View Controllers */,
 				8002681F23A8649D00B06E9D /* Main.storyboard */,
+				8021BAEA23A933A2003DCA31 /* Network Services */,
 				8002682223A864A100B06E9D /* Assets.xcassets */,
 				8002682423A864A100B06E9D /* LaunchScreen.storyboard */,
 				8002682723A864A100B06E9D /* Info.plist */,
@@ -136,6 +147,31 @@
 				8021BAE023A92FD3003DCA31 /* UIViewControllers+Alerts.swift */,
 			);
 			path = Extenstions;
+			sourceTree = "<group>";
+		};
+		8021BAE223A93116003DCA31 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8021BAE423A93146003DCA31 /* PodcastsDataLoad.swift */,
+				8021BAE623A93153003DCA31 /* FavoritesDataLoad.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8021BAE323A93128003DCA31 /* API Clients */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "API Clients";
+			sourceTree = "<group>";
+		};
+		8021BAEA23A933A2003DCA31 /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				8021BAEB23A933E9003DCA31 /* AppError.swift */,
+				8021BAE823A9337A003DCA31 /* NetworkHelper.swift */,
+			);
+			path = "Network Services";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,10 +279,14 @@
 				8021BADE23A92F7C003DCA31 /* FavoritesCell.swift in Sources */,
 				8021BAD723A92F28003DCA31 /* PodcastsDetailController.swift in Sources */,
 				8002681A23A8649D00B06E9D /* AppDelegate.swift in Sources */,
+				8021BAE923A9337A003DCA31 /* NetworkHelper.swift in Sources */,
+				8021BAE523A93147003DCA31 /* PodcastsDataLoad.swift in Sources */,
 				8021BAD923A92F32003DCA31 /* FavoritesViewController.swift in Sources */,
 				8021BADC23A92F64003DCA31 /* PodcastCell.swift in Sources */,
+				8021BAEC23A933E9003DCA31 /* AppError.swift in Sources */,
 				8002681C23A8649D00B06E9D /* SceneDelegate.swift in Sources */,
 				8021BAE123A92FD3003DCA31 /* UIViewControllers+Alerts.swift in Sources */,
+				8021BAE723A93153003DCA31 /* FavoritesDataLoad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
