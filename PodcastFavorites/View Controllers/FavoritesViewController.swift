@@ -52,16 +52,16 @@ class FavoritesViewController: UIViewController {
         }
     }
     
-    func configureRefreshControl() {
-        refreshControl = UIRefreshControl()
-        favoritesTableView.refreshControl = refreshControl
-        
-        refreshControl.addTarget(self, action: #selector(), for: .valueChanged)
-        }
-    
-    @objc private func loadFavorites() {
-        
-    }
+//    func configureRefreshControl() {
+//        refreshControl = UIRefreshControl()
+//        favoritesTableView.refreshControl = refreshControl
+//        
+//        refreshControl.addTarget(self, action: #selector(), for: .valueChanged)
+//        }
+//    
+//    @objc private func loadFavorites() {
+//        
+//    }
 }
 
 extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
