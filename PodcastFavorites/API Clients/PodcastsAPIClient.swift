@@ -10,7 +10,7 @@ import Foundation
 
 struct PodcastsAPIClient {
     
-    static func getPodcast(for userSearch: String, completion: @escaping (Result<Podcasts, AppError>) -> ()) {
+    static func getPodcast(for userSearch: String, completion: @escaping (Result<[Podcasts], AppError>) -> ()) {
         
         let podcastEndpointUrl = "https://itunes.apple.com/search?media=podcast&limit=200&term=\(userSearch)"
         
@@ -29,8 +29,10 @@ struct PodcastsAPIClient {
             case .success(let data):
                 
                 do {
-                    let podcast = try JSONDecoder().decode(Podcasts.self, from: data)
-                    completion(.success(podcast))
+                    let podcastData = try JSONDecoder().decode(PodcastsDataLoad.self, from: data)
+                    let podcasts = podcastData.results
+                    
+                    completion(.success(podcasts))
                 }
                 catch {
                     completion(.failure(.decodingError(error)))

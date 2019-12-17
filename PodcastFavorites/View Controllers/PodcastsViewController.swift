@@ -22,7 +22,7 @@ class PodcastsViewController: UIViewController {
         }
     }
     
-    var searchQuery = "" {
+    var searchQuery = "swift" {
         didSet {
             self.searchBarQuery()
         }
@@ -34,21 +34,19 @@ class PodcastsViewController: UIViewController {
         podcastTableView.delegate = self
         podcastTableView.dataSource = self
         podcastsSearchBar.delegate = self
-        loadData(for: "swift")
+        loadData()
         searchBarQuery()
     }
 
-    func loadData(for searchTerm: String) {
+    func loadData() {
         
-        let podcastUrl = "tunes.apple.com/search?media=podcast&limit=200&term=\(searchTerm)"
-        
-        PodcastsAPIClient.getPodcast(for: podcastUrl) { (result) in
+        PodcastsAPIClient.getPodcast(for: searchQuery) { (result) in
             
             switch result{
             case .failure(let appError):
                 print("appError: \(appError)")
             case .success(let podcasts):
-                self.podcasts = [podcasts]
+                self.podcasts = podcasts
             }
         }
     }
@@ -72,6 +70,9 @@ extension PodcastsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "podcastCell", for: indexPath) as? PodcastCell else {
             fatalError("cell doesn't conform to Podcast cell")
         }
+        let selectedPodcast = podcasts[indexPath.row]
+        
+        cell.configureCell(for: selectedPodcast)
         
         return cell
     }
@@ -80,14 +81,15 @@ extension PodcastsViewController: UITableViewDataSource, UITableViewDelegate {
 extension PodcastsViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        if !searchText.isEmpty {
-            loadData(for: searchText)
+        searchBar.resignFirstResponder()
+        
+            guard let searchText = searchBar.text else {
+                print("missing search text")
+                return
+            }
+            searchQuery = searchText
+        loadData()
         }
-        searchQuery = searchText
+    
     }
-}

@@ -102,14 +102,43 @@
                     <view key="view" contentMode="scaleToFill" id="vmX-kw-C4s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g2O-ji-5iW">
+                                <rect key="frame" x="40" y="128" width="334" height="313.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWw-5N-wYL">
+                                <rect key="frame" x="20" y="461.5" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3c1-lM-IYu">
+                                <rect key="frame" x="20" y="505.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GX5-SB-3rn" firstAttribute="trailing" secondItem="lWw-5N-wYL" secondAttribute="trailing" constant="20" id="6RF-lA-wvz"/>
+                            <constraint firstItem="3c1-lM-IYu" firstAttribute="top" secondItem="lWw-5N-wYL" secondAttribute="bottom" constant="20" id="G6e-Db-bOa"/>
+                            <constraint firstItem="g2O-ji-5iW" firstAttribute="leading" secondItem="GX5-SB-3rn" secondAttribute="leading" constant="40" id="TkU-7w-buW"/>
+                            <constraint firstItem="3c1-lM-IYu" firstAttribute="leading" secondItem="GX5-SB-3rn" secondAttribute="leading" constant="20" id="ZPF-JD-tip"/>
+                            <constraint firstItem="g2O-ji-5iW" firstAttribute="top" secondItem="GX5-SB-3rn" secondAttribute="top" constant="40" id="a4D-la-iiA"/>
+                            <constraint firstItem="GX5-SB-3rn" firstAttribute="trailing" secondItem="3c1-lM-IYu" secondAttribute="trailing" constant="20" id="asp-9D-kx3"/>
+                            <constraint firstItem="lWw-5N-wYL" firstAttribute="top" secondItem="g2O-ji-5iW" secondAttribute="bottom" constant="20" id="gfV-Tc-Ve4"/>
+                            <constraint firstItem="g2O-ji-5iW" firstAttribute="height" secondItem="vmX-kw-C4s" secondAttribute="height" multiplier="0.35" id="u1d-je-Eiq"/>
+                            <constraint firstItem="lWw-5N-wYL" firstAttribute="leading" secondItem="GX5-SB-3rn" secondAttribute="leading" constant="20" id="xD5-Ec-g6k"/>
+                            <constraint firstItem="GX5-SB-3rn" firstAttribute="trailing" secondItem="g2O-ji-5iW" secondAttribute="trailing" constant="40" id="xte-4t-UHl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GX5-SB-3rn"/>
                     </view>
                     <navigationItem key="navigationItem" id="7Wt-EL-8fX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ys7-Pp-kav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2874" y="117"/>
+            <point key="canvasLocation" x="2873.913043478261" y="116.51785714285714"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="lai-pY-KAy">
