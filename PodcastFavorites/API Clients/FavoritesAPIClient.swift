@@ -10,7 +10,7 @@ import Foundation
 
 struct FavoritesAPIClient {
     
-    static func getFavorites(completion: @escaping (Result<[FavoritesDataLoad], AppError>) -> ())  {
+    static func getFavorites(completion: @escaping (Result<[Podcasts], AppError>) -> ())  {
         
         let favoritesEndpointUrl = "https://5c2e2a592fffe80014bd6904.mockapi.io/api/v1/favorites"
         
@@ -30,7 +30,7 @@ struct FavoritesAPIClient {
                 case .success(let data):
                     
                     do {
-                        let favorites = try JSONDecoder().decode([FavoritesDataLoad].self, from: data)
+                        let favorites = try JSONDecoder().decode([Podcasts].self, from: data)
                         
                         completion(.success(favorites))
                     } catch {
@@ -40,7 +40,7 @@ struct FavoritesAPIClient {
         }
     }
     
-    static func postFavorites(favorite: FavoritesDataLoad, completion: @escaping (Result<Bool, AppError>) -> ()) {
+    static func postFavorites(favorite: Podcasts, completion: @escaping (Result<Bool, AppError>) -> ()) {
         
         let endpointUrl = "https://5c2e2a592fffe80014bd6904.mockapi.io/api/v1/favorites"
         

@@ -63,7 +63,7 @@
                                             <outlet property="podcastArtistName" destination="oJy-FY-uu2" id="bpT-Sx-csS"/>
                                             <outlet property="podcastImage" destination="07n-UX-j2U" id="h95-13-dXB"/>
                                             <outlet property="podcastNameLabel" destination="30J-S8-tTn" id="cVR-dI-ahD"/>
-                                            <segue destination="fzn-v7-cNK" kind="show" id="m8s-y7-JMK"/>
+                                            <segue destination="fzn-v7-cNK" kind="show" identifier="podcastDetail" id="m8s-y7-JMK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -95,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="116.51785714285714"/>
         </scene>
-        <!--Podcasts Detail Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="hqG-tm-Seq">
             <objects>
-                <viewController id="fzn-v7-cNK" customClass="PodcastsDetailController" customModule="PodcastFavorites" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fzn-v7-cNK" customClass="DetailViewController" customModule="PodcastFavorites" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vmX-kw-C4s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,9 +142,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="podcastArtistName" destination="3c1-lM-IYu" id="YA2-Bv-SeJ"/>
-                        <outlet property="podcastCollectionName" destination="lWw-5N-wYL" id="TNq-iI-H7m"/>
-                        <outlet property="podcastImage" destination="g2O-ji-5iW" id="Jac-tz-TAO"/>
+                        <outlet property="detailArtistName" destination="3c1-lM-IYu" id="YA2-Bv-SeJ"/>
+                        <outlet property="detailCollectionName" destination="lWw-5N-wYL" id="TNq-iI-H7m"/>
+                        <outlet property="detailImage" destination="g2O-ji-5iW" id="Jac-tz-TAO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ys7-Pp-kav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -220,7 +220,7 @@
                                             <outlet property="favoritedBy" destination="4wa-ow-xA5" id="e5e-RT-Jgp"/>
                                             <outlet property="favoritesImage" destination="pcb-4W-bhN" id="Un9-W3-W8f"/>
                                             <outlet property="favoritesTitle" destination="MQs-ka-VLg" id="qgX-iq-CFG"/>
-                                            <segue destination="fzn-v7-cNK" kind="show" id="Yp7-8e-f2q"/>
+                                            <segue destination="fzn-v7-cNK" kind="show" identifier="favoritesDetail" id="Yp7-8e-f2q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

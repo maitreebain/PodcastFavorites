@@ -14,13 +14,12 @@
 		8002682323A864A100B06E9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8002682223A864A100B06E9D /* Assets.xcassets */; };
 		8002682623A864A100B06E9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8002682423A864A100B06E9D /* LaunchScreen.storyboard */; };
 		8002683123A864A200B06E9D /* PodcastFavoritesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8002683023A864A200B06E9D /* PodcastFavoritesTests.swift */; };
-		8021BAD723A92F28003DCA31 /* PodcastsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAD623A92F28003DCA31 /* PodcastsDetailController.swift */; };
+		8021BAD723A92F28003DCA31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAD623A92F28003DCA31 /* DetailViewController.swift */; };
 		8021BAD923A92F32003DCA31 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAD823A92F32003DCA31 /* FavoritesViewController.swift */; };
 		8021BADC23A92F64003DCA31 /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BADB23A92F64003DCA31 /* PodcastCell.swift */; };
 		8021BADE23A92F7C003DCA31 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BADD23A92F7C003DCA31 /* FavoritesCell.swift */; };
 		8021BAE123A92FD3003DCA31 /* UIViewControllers+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAE023A92FD3003DCA31 /* UIViewControllers+Alerts.swift */; };
 		8021BAE523A93147003DCA31 /* PodcastsDataLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAE423A93146003DCA31 /* PodcastsDataLoad.swift */; };
-		8021BAE723A93153003DCA31 /* FavoritesDataLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAE623A93153003DCA31 /* FavoritesDataLoad.swift */; };
 		8021BAE923A9337A003DCA31 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAE823A9337A003DCA31 /* NetworkHelper.swift */; };
 		8021BAEC23A933E9003DCA31 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAEB23A933E9003DCA31 /* AppError.swift */; };
 		8021BAEE23A93AEE003DCA31 /* PodcastsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021BAED23A93AEE003DCA31 /* PodcastsAPIClient.swift */; };
@@ -50,13 +49,12 @@
 		8002682C23A864A200B06E9D /* PodcastFavoritesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodcastFavoritesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8002683023A864A200B06E9D /* PodcastFavoritesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastFavoritesTests.swift; sourceTree = "<group>"; };
 		8002683223A864A200B06E9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8021BAD623A92F28003DCA31 /* PodcastsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsDetailController.swift; sourceTree = "<group>"; };
+		8021BAD623A92F28003DCA31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8021BAD823A92F32003DCA31 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		8021BADB23A92F64003DCA31 /* PodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
 		8021BADD23A92F7C003DCA31 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		8021BAE023A92FD3003DCA31 /* UIViewControllers+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllers+Alerts.swift"; sourceTree = "<group>"; };
 		8021BAE423A93146003DCA31 /* PodcastsDataLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsDataLoad.swift; sourceTree = "<group>"; };
-		8021BAE623A93153003DCA31 /* FavoritesDataLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDataLoad.swift; sourceTree = "<group>"; };
 		8021BAE823A9337A003DCA31 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		8021BAEB23A933E9003DCA31 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		8021BAED23A93AEE003DCA31 /* PodcastsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsAPIClient.swift; sourceTree = "<group>"; };
@@ -132,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				8002681D23A8649D00B06E9D /* PodcastsViewController.swift */,
-				8021BAD623A92F28003DCA31 /* PodcastsDetailController.swift */,
+				8021BAD623A92F28003DCA31 /* DetailViewController.swift */,
 				8021BAD823A92F32003DCA31 /* FavoritesViewController.swift */,
 			);
 			path = "View Controllers";
@@ -160,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				8021BAE423A93146003DCA31 /* PodcastsDataLoad.swift */,
-				8021BAE623A93153003DCA31 /* FavoritesDataLoad.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -287,7 +284,7 @@
 				8002681E23A8649D00B06E9D /* PodcastsViewController.swift in Sources */,
 				8021BADE23A92F7C003DCA31 /* FavoritesCell.swift in Sources */,
 				8021BAF023A940D4003DCA31 /* UIImageView+Extension.swift in Sources */,
-				8021BAD723A92F28003DCA31 /* PodcastsDetailController.swift in Sources */,
+				8021BAD723A92F28003DCA31 /* DetailViewController.swift in Sources */,
 				8002681A23A8649D00B06E9D /* AppDelegate.swift in Sources */,
 				8021BAE923A9337A003DCA31 /* NetworkHelper.swift in Sources */,
 				8021BAEE23A93AEE003DCA31 /* PodcastsAPIClient.swift in Sources */,
@@ -298,7 +295,6 @@
 				8021BAEC23A933E9003DCA31 /* AppError.swift in Sources */,
 				8002681C23A8649D00B06E9D /* SceneDelegate.swift in Sources */,
 				8021BAE123A92FD3003DCA31 /* UIViewControllers+Alerts.swift in Sources */,
-				8021BAE723A93153003DCA31 /* FavoritesDataLoad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

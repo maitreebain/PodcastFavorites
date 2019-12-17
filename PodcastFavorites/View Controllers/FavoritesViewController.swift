@@ -12,7 +12,7 @@ class FavoritesViewController: UIViewController {
 
     @IBOutlet weak var favoritesTableView: UITableView!
     
-    var favorites = [FavoritesDataLoad]() {
+    var favorite = [Podcasts]() {
         didSet {
             DispatchQueue.main.async {
                 self.favoritesTableView.reloadData()
@@ -27,6 +27,16 @@ class FavoritesViewController: UIViewController {
         favoritesTableView.delegate = self
         loadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let favoritesDetailController = segue.destination as? DetailViewController,
+            let indexPath = favoritesTableView.indexPathForSelectedRow else {
+                fatalError("no segue found")
+        }
+        let selectedFavorite = favorite[indexPath.row]
+        
+        favoritesDetailController.podcast = selectedFavorite
+    }
 
     func loadData() {
         
@@ -35,8 +45,8 @@ class FavoritesViewController: UIViewController {
             switch result{
             case .failure(let appError):
                 print("appError: \(appError)")
-            case .success(let favorites):
-                self.favorites = favorites
+            case .success(let favorite):
+                self.favorite = favorite
             }
         }
     }
@@ -48,14 +58,14 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favorites.count
+        return favorite.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "favoritesCell", for: indexPath) as? FavoritesCell else {
             fatalError("cell not conforming to favorites cell")
         }
-        let selectedFavorite = favorites[indexPath.row]
+        let selectedFavorite = favorite[indexPath.row]
         
         cell.configureCel(for: selectedFavorite)
         

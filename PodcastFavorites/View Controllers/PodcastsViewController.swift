@@ -39,7 +39,7 @@ class PodcastsViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let podcastsDetailController = segue.destination as? PodcastsDetailController,
+        guard let podcastsDetailController = segue.destination as? DetailViewController,
             let indexPath = podcastTableView.indexPathForSelectedRow else {
                 fatalError("no segue found")
         }

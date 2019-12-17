@@ -21,7 +21,11 @@ class PodcastCell: UITableViewCell {
         podcastNameLabel.text = podcast.collectionName
         podcastArtistName.text = podcast.artistName
         
-        podcastImage.getImage(for: podcast.artworkUrl60) { [weak self] (result) in
+        guard let imageURL = podcast.artworkUrl60 else {
+            return
+        }
+        
+        podcastImage.getImage(for: imageURL) { [weak self] (result) in
             
             switch result {
             case .failure(let appError):
