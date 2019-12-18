@@ -36,7 +36,7 @@ class FavoritesViewController: UIViewController {
         }
         let selectedFavorite = favorite[indexPath.row]
         
-        favoritesDetailController.podcast = selectedFavorite
+        favoritesDetailController.favPodcast = selectedFavorite
     }
 
     func loadData() {

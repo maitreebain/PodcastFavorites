@@ -16,21 +16,29 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailArtistName: UILabel!
     
+    @IBOutlet weak var barButton: UIBarButtonItem!
+    
     var podcast: Podcasts?
+    var favPodcast: Podcasts?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        loadData(for: podcast!)
-        favoritesLoadData(for: podcast!)
+        loadData()
+        favoritesLoadData()
     }
     
-    func loadData(for podcast: Podcasts) {
+    func loadData() {
         
-        detailCollectionName.text = podcast.collectionName
-        detailArtistName.text = podcast.artistName
-        detailImage.getImage(for: podcast.artworkUrl600) { [weak self] (result) in
+        guard let podcastInfo = podcast else {
+            print("podcast is not unwrapped")
+            return
+        }
+        
+        detailCollectionName.text = podcastInfo.collectionName
+        detailArtistName.text = podcastInfo.artistName
+        detailImage.getImage(for: podcastInfo.artworkUrl600) { [weak self] (result) in
             
             switch result{
             case .failure(let appError):
@@ -73,11 +81,18 @@ class DetailViewController: UIViewController {
     }
 }
  
-    func favoritesLoadData(for favorite: Podcasts) {
+    func favoritesLoadData() {
         
-        detailCollectionName.text = favorite.collectionName
-        detailArtistName.text = favorite.favoritedBy
-        detailImage.getImage(for: favorite.artworkUrl600) { [weak self] (result) in
+        guard let favoriteInfo = favPodcast else {
+            print("podcast is not unwrapped")
+            return
+        }
+        
+        barButton.isEnabled = false
+        
+        detailCollectionName.text = favoriteInfo.collectionName
+        detailArtistName.text = favoriteInfo.favoritedBy
+        detailImage.getImage(for: favoriteInfo.artworkUrl600) { [weak self] (result) in
             
             switch result{
             case .failure(let appError):
@@ -91,6 +106,10 @@ class DetailViewController: UIViewController {
                 }
             }
         }
+        
+        
+        
+        
     }
     
 }

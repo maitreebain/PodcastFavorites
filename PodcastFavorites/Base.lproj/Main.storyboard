@@ -142,6 +142,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="barButton" destination="ue1-I3-tSo" id="M5g-QO-lBa"/>
                         <outlet property="detailArtistName" destination="3c1-lM-IYu" id="YA2-Bv-SeJ"/>
                         <outlet property="detailCollectionName" destination="lWw-5N-wYL" id="TNq-iI-H7m"/>
                         <outlet property="detailImage" destination="g2O-ji-5iW" id="Jac-tz-TAO"/>
